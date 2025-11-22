@@ -43,6 +43,14 @@ class MiClase:
                 return False
         return True
 
+#Metodo Nuevo
+    def Encuentra(self, lista, elemento): #Verifica si un elemento esta presente en la lista
+        if lista is None:
+            return False
+        for item in lista:
+            if item == elemento:
+                return True
+        return False
 
 ################################################################################################
 # Ejemplo de ejecución
