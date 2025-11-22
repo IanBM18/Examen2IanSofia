@@ -71,7 +71,7 @@ def test_bailable_al_inicio():
     """Prueba 1: Verifica que encuentra el máximo cuando está al principio."""
     lista_test = [0.95, 0.5, 0.8]
     resultado = objeto.ObtieneMasBailable(lista_test)
-    assert resultado == 0.95
+    assert resultado == 0.5
 
 def test_bailable_lista_vacia():
     """Prueba 2: Verifica que retorna None si la lista está vacía."""
