@@ -123,3 +123,13 @@ class TestMiClase:
         resultado = self.objeto.DivisibleTempo(10)
         assert resultado == [1, 2, 5, 10]  # Divisores de 10
 
+# ====================================================================
+# Pruebas para Metodo Nuevo "Encuentra"
+# ====================================================================
+
+def test_encuentra_elemento_presente():
+    """Prueba 1: El elemento SÍ está presente en la lista (debe ser True)."""
+    lista_test = [10, 20, 30, 40]
+    elemento_buscado = 30
+    resultado = objeto.Encuentra(lista_test, elemento_buscado)
+    assert resultado is True
