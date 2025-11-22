@@ -52,3 +52,36 @@ print(objeto.ObtieneValencia(1234567))       # Esperado: 4
 print(objeto.DivisibleTempo(10))             # Esperado: [1, 2, 5, 10]
 print(objeto.ObtieneMasBailable([0.8, 0.9, 0.7]))  # Esperado: 0.9
 print(objeto.VerificaListaCanciones(["Canción 1", "Canción 2", "Canción 3"]))  # Esperado: True
+
+################################################################################################
+# Pruebas Unitarias Ian
+################################################################################################ 
+
+# --- Pruebas para ObtieneMasBailable ---
+
+def test_bailable_al_inicio():
+    """Prueba 1: Verifica que encuentra el máximo cuando está al principio."""
+    lista_test = [0.95, 0.5, 0.8]
+    resultado = objeto.ObtieneMasBailable(lista_test)
+    assert resultado == 0.95
+
+def test_bailable_lista_vacia():
+    """Prueba 2: Verifica que retorna None si la lista está vacía."""
+    lista_test = []
+    resultado = objeto.ObtieneMasBailable(lista_test)
+    assert resultado is None
+
+
+# --- Pruebas para VerificaListaCanciones ---
+
+def test_lista_contiene_none():
+    """Prueba 3: Verifica que retorna False si hay un None en la lista."""
+    lista_test = ["Song A", None, "Song B"]
+    resultado = objeto.VerificaListaCanciones(lista_test)
+    assert resultado is False 
+
+def test_lista_vacia_es_valida():
+    """Prueba 4: Verifica que retorna True para una lista vacía (no contiene None)."""
+    lista_test = []
+    resultado = objeto.VerificaListaCanciones(lista_test)
+    assert resultado is True
