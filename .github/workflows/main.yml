@@ -1,0 +1,37 @@
+# .github/workflows/main.yml
+
+name: Pruebas Unitarias CI
+
+# El workflow se dispara en cada push y en cada Pull Request a la rama develop
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+    
+# Permite que el workflow de PR pueda leer el repositorio
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Se ejecuta en un servidor virtual de Ubuntu
+
+    steps:
+      - name: Checkout del Repositorio
+        uses: actions/checkout@v4 # Baja el código del repositorio
+
+      - name: Configurar Python 3.x
+        # Configura el entorno de Python que vamos a usar
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x' 
+
+      - name: Instalar Dependencias
+        run: |
+          # Instalamos pytest, que es el framework que estamos usando
+          pip install pytest 
+
+      - name: Ejecutar Pruebas Unitarias
+        # Pytest buscará y ejecutará las pruebas en Examen2.py o test_miclase.py
+        run: pytest Examen2.py
