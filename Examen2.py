@@ -53,7 +53,6 @@ print(objeto.DivisibleTempo(10))             # Esperado: [1, 2, 5, 10]
 print(objeto.ObtieneMasBailable([0.8, 0.9, 0.7]))  # Esperado: 0.9
 print(objeto.VerificaListaCanciones(["Canción 1", "Canción 2", "Canción 3"]))  # Esperado: True
 
-<<<<<<< HEAD
 ################################################################################################
 # Pruebas Unitarias Ian
 ################################################################################################ 
@@ -86,9 +85,9 @@ def test_lista_vacia_es_valida():
     lista_test = []
     resultado = objeto.VerificaListaCanciones(lista_test)
     assert resultado is True
-=======
+
 #################################################################################################
-#Pruebas Unitarias
+#Pruebas Unitarias Sofia
 import pytest 
 
 class TestMiClase:
@@ -116,4 +115,3 @@ class TestMiClase:
         resultado = self.objeto.DivisibleTempo(10)
         assert resultado == [1, 2, 5, 10]  # Divisores de 10
 
->>>>>>> PruebasUnitariasSofia
